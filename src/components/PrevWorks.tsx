@@ -1,25 +1,24 @@
 import React from "react";
-import {Typography} from "@material-ui/core";
+import {Grid, Typography} from "@material-ui/core";
 import {WorkCard} from "./WorkCard";
 
 export const PrevWorks: React.FC = () =>{
     return(
         <div>
-            <span>I'm prevWorks</span>
-            <Typography variant={'body2'} style={{color:'white', display: 'inline'}}>I'm home</Typography>
-            <Typography variant={'body1'} color={'textPrimary'}>test</Typography>
-            <ul style={{display: 'flex',listStyle: 'none', flexWrap: 'wrap'}}>
-                <li>
+            <Grid container justifyContent={'center'}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                     <WorkCard/>
-                </li>
-                <li>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                     <WorkCard/>
-                </li>
-                <li>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                     <WorkCard/>
-                </li>
-            </ul>
-
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <WorkCard/>
+                </Grid>
+            </Grid>
         </div>
     )
 }

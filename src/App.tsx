@@ -6,8 +6,8 @@ import {ThemeProvider} from "@material-ui/styles";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Home} from "./components/Home";
 import {PrevWorks} from "./components/PrevWorks";
-import {Resume} from "./components/Resume";
 import {FunStuff} from "./components/FunStuff";
+import Resume from "./components/Resume";
 
 
 const App: React.FC = () => {

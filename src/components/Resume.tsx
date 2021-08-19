@@ -1,9 +1,20 @@
 import React from "react";
+import {Typography} from "@material-ui/core";
 
-export const Resume: React.FC = () =>{
-    return(
-        <div>
-            <span>I'm Resume</span>
-        </div>
-    )
+interface myState {
+    resumeFilePath: String
+}
+
+export default class Resume extends React.Component<{}, myState>{
+    state: myState ={
+        resumeFilePath: ''
+    }
+
+    render() {
+        return (
+            <div>
+                <Typography variant={"h1"}>Resume goes here</Typography>
+            </div>
+        );
+    }
 }

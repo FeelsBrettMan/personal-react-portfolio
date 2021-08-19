@@ -10,15 +10,14 @@ import {
     Paper,
     Avatar
 } from "@material-ui/core";
-import logo from '../placeholderImg.png'
+import logo from '../resources/placeholderImg.png'
 import {makeStyles} from "@material-ui/styles";
 import {createStyles, Theme} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme:Theme) =>
 createStyles({
     card:{
-        width: '320px',
-        height: '500px',
+        maxWidth: '320px',
         padding: '10px',
         margin: '10px',
     },
@@ -29,6 +28,7 @@ createStyles({
         listStyle: 'none',
         padding: theme.spacing(0.5),
         backgroundColor: theme.palette.primary.dark,
+        margin: 0,
     },
     chip:{
         margin: theme.spacing(0.5)
