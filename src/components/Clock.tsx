@@ -34,13 +34,6 @@ export default class Clock extends React.Component<{}, myState>{
         }
     }
 
-    conditionalRender(){
-        if(this.state.time instanceof Date) {
-            return (<Typography variant={'body1'} color={'textPrimary'}>Current Time: {this.state.time.toLocaleTimeString()}</Typography>)
-        }
-        else return null
-    }
-
     render() {
         return (
             <div>

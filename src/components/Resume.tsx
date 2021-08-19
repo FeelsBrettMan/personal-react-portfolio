@@ -9,9 +9,6 @@ export default class Resume extends React.Component<{}, myState>{
     state: myState ={
         resumeFilePath: '',
     }
-    constructor() {
-        super({});
-    }
 
     render() {
         return (

@@ -8,9 +8,7 @@ import {
     Typography,
     Chip,
     Paper,
-    Avatar
 } from "@material-ui/core";
-import logo from '../resources/placeholderImg.png'
 import {makeStyles} from "@material-ui/styles";
 import {createStyles, Theme} from "@material-ui/core/styles";
 
@@ -34,43 +32,54 @@ createStyles({
         margin: theme.spacing(0.5)
     }
 }))
+interface CardProps{
+    title: string;
+    imgFilePath: string;
+    imgAlt: string;
+    description: string;
+    chips: string[];
+}
+interface ChipData{
+    key: number;
+    label: string;
+}
 
-export const WorkCard: React.FC = () =>{
+export const WorkCard=({title, imgFilePath, imgAlt, description, chips}: CardProps) =>{
     const classes = useStyles();
+    let chipArray: ChipData[] = [];
+
+     for (let i = 0; i < chips.length; i++) {
+         chipArray.push( {key:i, label:chips[i]})
+     }
+
     return(
         <Card className={classes.card}>
             <CardActionArea>
                 <CardMedia
                     component={"img"}
-                    alt={"Placeholder"}
+                    alt={imgAlt}
                     height={'240'}
-                    image={logo}
-                    title={'Placeholder'}
+                    image={imgFilePath}
+                    title={title}
                 />
                 <CardContent>
-                    <Typography variant={'h5'}>PlaceHolder Title</Typography>
-                    <Typography variant={'body2'} color={'textSecondary'}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-                    </Typography>
+                    <Typography variant={'h5'}>{title}</Typography>
+                    <Typography variant={'body2'} color={'textSecondary'}>{description}</Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
+
+                {
+                    //these will be replaced with a list with key!
+                }
                 <Paper component={'ul'} className={classes.paper}>
-                    <li>
-                        <Chip label={'Example'} avatar={<Avatar style={{color:'black', backgroundColor: 'yellow'}}>JS</Avatar>} className={classes.chip}/>
-                    </li>
-                    <li>
-                        <Chip label={'Example 1'} className={classes.chip}/>
-                    </li>
-                    <li>
-                        <Chip label={'Example 2'} className={classes.chip}/>
-                    </li>
-                    <li>
-                        <Chip label={'Example 3'} className={classes.chip}/>
-                    </li>
-                    <li>
-                        <Chip label={'Example 4'} className={classes.chip}/>
-                    </li>
+                    {chipArray.map((data)=>{
+                        return(
+                            <li key={data.key}>
+                                <Chip label={data.label} className={classes.chip}/>
+                            </li>
+                        )
+                    })}
                 </Paper>
 
             </CardActions>
