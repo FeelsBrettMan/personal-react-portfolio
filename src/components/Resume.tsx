@@ -1,13 +1,16 @@
 import React from "react";
 import {Typography} from "@material-ui/core";
+type myState = {
+    resumeFilePath: String;
 
-interface myState {
-    resumeFilePath: String
 }
 
 export default class Resume extends React.Component<{}, myState>{
     state: myState ={
-        resumeFilePath: ''
+        resumeFilePath: '',
+    }
+    constructor() {
+        super({});
     }
 
     render() {
