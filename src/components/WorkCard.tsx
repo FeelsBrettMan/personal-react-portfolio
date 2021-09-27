@@ -20,6 +20,7 @@ createStyles({
         margin: '10px',
     },
     paper:{
+        width: '300px',
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
@@ -58,7 +59,6 @@ export const WorkCard=({title, imgFilePath, imgAlt, description, chips}: CardPro
                 <CardMedia
                     component={"img"}
                     alt={imgAlt}
-                    height={'240'}
                     image={imgFilePath}
                     title={title}
                 />
